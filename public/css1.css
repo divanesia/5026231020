@@ -1,0 +1,24 @@
+body {
+    font-family: Roboto Mono;
+    background-color: peachpuff;
+    color: rgb(108, 63, 35);
+    margin-left: 50;
+    margin-right: 50;
+}
+
+a:link, a:visited {
+    color:  rgba(131, 105, 50, 0.668);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(96, 79, 22);
+    font-weight: bold;
+}
+
+
+.kalimatpembuka {
+    font-size: x-large;
+    border: chocolate;
+    border-radius: 50;
+}
