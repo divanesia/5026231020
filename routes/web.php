@@ -6,6 +6,7 @@ use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\BolpenDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -125,3 +126,17 @@ Route::post('/pegawai/update', [PegawaiDBController:: class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController:: class, 'hapus']);
 
 Route::get('/pegawai/cari', [PegawaiDBController:: class, 'cari']);
+
+
+//CRUD bolpen
+Route::get('/bolpen', [BolpenDBController::class, 'index']);
+
+Route::get('/bolpen/tambah', [BolpenDBController::class, 'tambah']);
+Route::post('/bolpen/store', [BolpenDBController:: class, 'store']);
+
+Route::get('/bolpen/edit/{id}', [BolpenDBController::class, 'edit']);
+Route::post('/bolpen/update', [BolpenDBController:: class, 'update']);
+
+Route::get('/bolpen/hapus/{id}', [BolpenDBController:: class, 'hapus']);
+
+Route::get('/bolpen/cari', [BolpenDBController:: class, 'cari']);

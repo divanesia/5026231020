@@ -5,6 +5,8 @@
 
 	<a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
 
+    <br>
+    <br>
 	<p>Cari Data Pegawai :</p>
 	<form action="/pegawai/cari" method="GET">
 		<input type="text" class="form-control" name="cari" placeholder="Cari Pegawai ..">
