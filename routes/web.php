@@ -7,6 +7,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\BolpenDBController;
+use App\Http\Controllers\KeranjangBelanjaDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,3 +141,12 @@ Route::post('/bolpen/update', [BolpenDBController:: class, 'update']);
 Route::get('/bolpen/hapus/{id}', [BolpenDBController:: class, 'hapus']);
 
 Route::get('/bolpen/cari', [BolpenDBController:: class, 'cari']);
+
+
+//Latihan EAS CRUD
+Route::get('/keranjangbelanja', [KeranjangBelanjaDBController::class, 'index']);
+
+Route::get('/keranjangbelanja/beli', [KeranjangBelanjaDBController::class, 'beli']);
+Route::post('/keranjangbelanja/store', [KeranjangBelanjaDBController:: class, 'store']);
+
+Route::get('/keranjangbelanja/batal/{ID}', [KeranjangBelanjaDBController:: class, 'batal']);
