@@ -2,7 +2,8 @@
 
 @section('content')
 	<h3>Data Keranjang Belanja</h3>
-
+    <a href="/keranjangbelanja/beli" class="btn btn-primary">Beli</a>
+    <br>
     <br>
 
 	<table class="table table-striped table-hover">
@@ -23,7 +24,6 @@
             <td>{{ number_format($k->Jumlah * $k->Harga, 0, ',', '.') }}</td>
 
 			<td>
-				<a href="/keranjangbelanja/beli" class="btn btn-success">Beli</a>
 				<a href="/keranjangbelanja/batal/{{ $k->ID }}" class="btn btn-danger">Batal</a>
 			</td>
 		</tr>

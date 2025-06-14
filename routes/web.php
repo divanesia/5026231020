@@ -8,6 +8,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\BolpenDBController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
+use App\Http\Controllers\CounterDBController;
+use App\Http\Controllers\KaryawanDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,10 +145,23 @@ Route::get('/bolpen/hapus/{id}', [BolpenDBController:: class, 'hapus']);
 Route::get('/bolpen/cari', [BolpenDBController:: class, 'cari']);
 
 
-//Latihan EAS CRUD
+//Latihan 1 EAS CRUD
 Route::get('/keranjangbelanja', [KeranjangBelanjaDBController::class, 'index']);
 
 Route::get('/keranjangbelanja/beli', [KeranjangBelanjaDBController::class, 'beli']);
 Route::post('/keranjangbelanja/store', [KeranjangBelanjaDBController:: class, 'store']);
 
 Route::get('/keranjangbelanja/batal/{ID}', [KeranjangBelanjaDBController:: class, 'batal']);
+
+
+//Latihan 2 EAS CRUD
+Route::get('/counter',[CounterDBController::class, 'index']);
+
+
+//Latihan 3 EAS CRUD
+Route::get('/karyawan', [KaryawanDBController:: class, 'index']);
+
+Route::get('/karyawan/tambah', [KaryawanDBController::class, 'tambah']);
+Route::post('/karyawan/store', [KaryawanDBController::class, 'store']);
+
+Route::delete('/karyawan/hapus/{kodepegawai}', [KaryawanDBController::class, 'hapus']);
