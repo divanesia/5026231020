@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class KaryawanDBController extends Controller
 {
     public function index(){
     	    // mengambil data dari table karyawan
-		    $karyawan = DB::table('karyawan')->paginate(10);
+		    $karyawan = DB::table('karyawan')->get();
 
     	    // mengirim data pegawai ke view index
 		    return view('indexkaryawan',['karyawan' => $karyawan]);
@@ -20,6 +21,7 @@ class KaryawanDBController extends Controller
 
             // memanggil view tambah
             return view('tambahkaryawan');
+
 
         }
 
@@ -41,5 +43,19 @@ class KaryawanDBController extends Controller
             DB::table('karyawan')->where('kodepegawai', $kodepegawai)->delete();
             return redirect('/karyawan');
         }
+
+
+        public function view($kodepegawai){
+        // Mengambil data karyawan berdasarkan kodepegawai
+        $karyawan = DB::table('karyawan')->where('kodepegawai', $kodepegawai)->first();
+
+        // Cek apakah karyawan ditemukan
+        if (!$karyawan) {
+            abort(404, 'Karyawan tidak ditemukan.'); // Atau redirect dengan pesan error
+        }
+
+        // Mengirim data karyawan ke view detail
+        return view('viewkaryawan',['karyawan' => $karyawan]);
+    }
 
 }

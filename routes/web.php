@@ -10,6 +10,7 @@ use App\Http\Controllers\BolpenDBController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
 use App\Http\Controllers\CounterDBController;
 use App\Http\Controllers\KaryawanDBController;
+use App\Http\Controllers\MyKaryawanDBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -165,3 +166,10 @@ Route::get('/karyawan/tambah', [KaryawanDBController::class, 'tambah']);
 Route::post('/karyawan/store', [KaryawanDBController::class, 'store']);
 
 Route::delete('/karyawan/hapus/{kodepegawai}', [KaryawanDBController::class, 'hapus']);
+
+
+// eas
+Route::get('/eas', [MyKaryawanDBController:: class, 'index']);
+Route::get('/eas/edit/{kodepegawai}', [MyKaryawanDBController::class, 'edit']);
+Route::post('/eas/update', [MyKaryawanDBController:: class, 'update']);
+Route::get('/eas/view/{kodepegawai}', [MyKaryawanDBController::class, 'view']);
